@@ -1,10 +1,14 @@
+import AboutUs from "@/components/home/AboutUs";
+import Banner from "@/components/home/Banner";
+import Footer from "@/components/shared/Footer";
 
 
 export default function Home() {
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
-
-      <p>This is on quiz setup</p>
+    <main className="h-full">
+      <Banner></Banner>
+      <AboutUs></AboutUs>
+      <Footer></Footer>
     </main>
   );
 }
