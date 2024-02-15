@@ -1,56 +1,52 @@
 import Image from 'next/image';
 import React from 'react';
 import img from '../../assets/banner-removebg-preview.png';
+
 const Banner = () => {
     return (
-        <div className=" flex justify-center ">
+        <div className="flex justify-center">
             <div className="bg-pink-100 lg:flex px-5 lg:pl-20 h-[100vh]">
-                <div className="left-side space-y-5 lg:w-[50%] pt-20">
-                    <p className="text-[#FF807C]">SMART LEARNING</p>
-                    <p className="text-3xl ">
+                <div className="left-side lg:w-[50%] pt-20 pr-5 lg:pr-10">
+                    <p className="text-[#FF807C] text-center lg:text-left">SMART LEARNING</p>
+                    <p className="text-3xl text-center lg:text-left">
                         PROGRAMMING <br /> QUIZ
                     </p>
-                    <p className="font-mono">
+                    <p className="font-mono text-center lg:text-left">
                         Quam quisque id diam vel quam elementum pulvinar etiam non. Lobortis
                         feugiat vivamus at augue eget. Eu volutpat odio facilisis mauris sit
                         amet.
                     </p>
 
-                    <div className="bg-gradient-to-r from-orange-300  to-[#FF807C] p-5 rounded-md   space-y-2">
-                        <button className="bg-slate-800 text-white px-10 py-2 hover:text-[#FF807C] rounded mr-2">
+                    <div className="bg-gradient-to-r from-orange-300 to-[#FF807C] p-5 rounded-md space-y-2 flex flex-wrap justify-center lg:justify-start">
+                        <button className="bg-slate-800 text-white px-4 py-2 hover:text-[#FF807C] rounded-md m-2">
                             HTML
                         </button>
-                        <button className="bg-slate-800 text-white px-10 py-2 mr-2 hover:text-[#FF807C] rounded">
+                        <button className="bg-slate-800 text-white px-4 py-2 hover:text-[#FF807C] rounded-md m-2">
                             CSS
                         </button>
-                        <button className="bg-slate-800 text-white px-10 py-2 mr-2 hover:text-[#FF807C] rounded">
+                        <button className="bg-slate-800 text-white px-4 py-2 hover:text-[#FF807C] rounded-md m-2">
                             JS
                         </button>
-                        <button className="bg-slate-800 text-white px-10 py-2 mr-2 hover:text-[#FF807C] rounded">
+                        <button className="bg-slate-800 text-white px-4 py-2 hover:text-[#FF807C] rounded-md m-2">
                             REACT
                         </button>
-                        <button className="bg-slate-800 text-white px-10 py-2 mr-2 hover:text-[#FF807C] rounded">
+                        <button className="bg-slate-800 text-white px-4 py-2 hover:text-[#FF807C] rounded-md m-2">
                             NODE JS
                         </button>
-                        <button className="bg-slate-800 text-white px-10 py-2 mr-2 hover:text-[#FF807C] rounded">
+                        <button className="bg-slate-800 text-white px-4 py-2 hover:text-[#FF807C] rounded-md m-2">
                             NEXT JS
                         </button>
-                        <button className="bg-slate-800 text-white px-10 py-2 mr-2 hover:text-[#FF807C] rounded">
+                        <button className="bg-slate-800 text-white px-4 py-2 hover:text-[#FF807C] rounded-md m-2">
                             MONGODB
                         </button>
-                        <button className="bg-slate-800 text-white px-10 py-2 mr-2 hover:text-[#FF807C] rounded">
+                        <button className="bg-slate-800 text-white px-4 py-2 hover:text-[#FF807C] rounded-md m-2">
                             MONGOOSE
                         </button>
                     </div>
                 </div>
-                <div className="Right-side lg:w-[50%]">
-                    <div className="flex justify-center  ml-10">
-                        <Image
-                            src={img}
-                            width={500}
-                            height={500}
-                            alt="Picture of the author"
-                        />
+                <div className="Right-side lg:w-[50%] pl-5 lg:pl-10">
+                    <div className="flex justify-center ml-10">
+                        <Image src={img} width={500} height={500} alt="Picture of the author" />
                     </div>
                 </div>
             </div>
