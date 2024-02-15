@@ -53,7 +53,6 @@ export async function POST(NextRequest) {
             httpOnly: true,
 
         })
-
         return response
 
     } catch (error) {
