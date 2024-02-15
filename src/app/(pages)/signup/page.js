@@ -50,19 +50,6 @@ const page = () => {
         }
     };
 
-    //   const handleSubmit = (e) => {
-    //     e.preventDefault();
-    //     if (password !== ConfirmPassword) {
-    //       setError('Password does not match');
-    //     } else {
-    //       createUser(email, password, name)
-    //         .then((result) => {
-    //           const user = result.user;
-    //           console.log(user);
-    //         })
-    //         .catch((error) => setError(error.message));
-    //     }
-    //   };
 
     return (
         <div className="">
