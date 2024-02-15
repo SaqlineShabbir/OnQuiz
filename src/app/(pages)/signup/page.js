@@ -1,17 +1,54 @@
 'use client'
 import Link from 'next/link';
+import { useRouter } from 'next/navigation';
 import { useState } from 'react';
 
 const page = () => {
-    const [name, setName] = useState('');
+    const [fullname, setFullName] = useState('');
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const [ConfirmPassword, setConfirmPassword] = useState('');
     const [error, setError] = useState('');
-
+    const router = useRouter();
 
 
     //form submission
+    const handleSubmit = async (e) => {
+        e.preventDefault();
+        setError('')
+        console.log('hello')
+        try {
+            if (password !== ConfirmPassword) {
+                setError('Password does not match');
+            } else {
+                console.log('password matched')
+                const response = await fetch('http://localhost:3000/api/signup', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({ fullname, email, password }),
+                });
+                console.log(response)
+                if (response.ok) {
+
+                    router.push('/');
+
+
+                } else {
+                    const errorData = await response.json();
+                    console.log('Signup failed:', errorData);
+
+
+                }
+
+            }
+
+        } catch (error) {
+            console.error('Signup failed:', error.message);
+            toast.error('Signup failed');
+        }
+    };
 
     //   const handleSubmit = (e) => {
     //     e.preventDefault();
@@ -51,7 +88,7 @@ const page = () => {
                             Sign Up
                         </p>
 
-                        <form className="">
+                        <form onSubmit={handleSubmit} className="">
                             <div className="space-y-5 flex flex-col justify-center  items-center">
 
 
@@ -59,7 +96,7 @@ const page = () => {
                                     type="text"
                                     className="lg:w-[400px] border w-[350px]  py-5 px-5   text-gray-900 text-sm rounded-full  "
                                     placeholder="Full Name"
-                                    onChange={(e) => setName(e.target.value)}
+                                    onChange={(e) => setFullName(e.target.value)}
                                     required
                                 />
 
@@ -74,8 +111,9 @@ const page = () => {
                                     type="password"
                                     className="lg:w-[400px] border w-[350px]  py-5 px-5   text-gray-900 text-sm rounded-full  "
                                     name="password"
-                                    minlength="8"
+                                    minLength="6"
                                     required
+                                    onChange={(e) => setPassword(e.target.value)}
                                     placeholder='password' />
                                 <input
                                     type="password"
