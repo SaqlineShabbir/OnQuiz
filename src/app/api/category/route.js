@@ -6,6 +6,7 @@ import path from "path";
 import cloudinary from "cloudinary";
 import Category from "@/models/CategoryModel";
 import { connect } from "@/connectToDb/connect";
+import Quiz from "@/models/QuizModel";
 //clowdinary
 
 cloudinary.config({
@@ -63,7 +64,7 @@ export async function GET(request) {
     await connect()
     try {
 
-        const categories = await Category.find({}).populate('quizs')
+        const categories = await Category.find({}).populate({ path: 'quizs', model: Quiz })
 
 
         // Return success response
