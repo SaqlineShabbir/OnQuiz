@@ -1,25 +1,27 @@
-// import { connect } from "@/connectToDb/connect";
-// import Category from "@/models/CategoryModel";
+import { connect } from "@/connectToDb/connect";
+import Category from "@/models/CategoryModel";
+import { NextResponse } from "next/server";
 
-// export async function GET(request) {
-//     await connect()
-//     try {
+export async function GET(request, { params }) {
+    await connect()
+    try {
+        const { id } = params;
 
-//         const categories = await Category.find({}).populate({ path: 'quizs', model: Quiz })
+        const categorie = await Category.findOne({ _id: id }).populate({ path: 'quizs', model: Quiz })
 
 
-//         // Return success response
-//         return NextResponse.json({
-//             message: "successfully get categories",
-//             success: true,
-//             categories
-//         });
+        // Return success response
+        return NextResponse.json({
+            message: "successfully get categorie",
+            success: true,
+            categorie
+        });
 
-//     } catch (error) {
-//         console.error('Error getting categories:', error);
-//         return NextResponse.json({
-//             message: error.message
-//         }, { status: 500 });
+    } catch (error) {
+        console.error('Error getting categorie:', error);
+        return NextResponse.json({
+            message: error.message
+        }, { status: 500 });
 
-//     }
-// }
+    }
+}
