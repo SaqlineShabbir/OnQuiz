@@ -1,5 +1,6 @@
 import { connect } from "@/connectToDb/connect";
 import Category from "@/models/CategoryModel";
+import Quiz from "@/models/QuizModel";
 import { NextResponse } from "next/server";
 
 export async function GET(request, { params }) {
