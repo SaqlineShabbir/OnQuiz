@@ -1,0 +1,106 @@
+'use client'
+import Link from 'next/link';
+import { useContext, useEffect, useState } from 'react';
+import { FaMedal } from 'react-icons/fa';
+import { ImSad2 } from 'react-icons/im';
+import { FaCheck } from 'react-icons/fa';
+
+const page = () => {
+
+    const [data, setData] = useState(null);
+
+    useEffect(() => {
+        const dataString = localStorage.getItem('questions');
+
+        setData(JSON.parse(dataString));
+    }, []);
+    useEffect(() => {
+        window.history.pushState(null, null, window.location.href);
+        window.onpopstate = function () {
+            window.history.go(1);
+        };
+    }, []);
+
+    console.log(data)
+    return (
+        <div>
+
+            <div className="flex justify-center my-20">
+                <div>
+                    {data?.score >= 80 ? (
+                        <div>
+                            <FaMedal size={100} color="#FFAE96" className="mt-1" />
+                            <p className="font-bold"> Congratulations you have passed</p>
+                        </div>
+                    ) : (
+                        <div>
+                            <ImSad2 size={100} color="#FFAE96" className="mt-1" />
+                            <div className="flex  justify-center">
+                                <p className="font-bold">
+                                    Were Sorry You failed to Score above 80%
+                                </p>
+                            </div>
+                        </div>
+                    )}
+                    <div className="pr-20">You Scored {data?.score.toFixed(2)}%</div>
+
+                    {/* //review quiz */}
+                    <div className='grid lg:grid-cols-3'>
+
+                        {data?.questions?.map((question) => (
+                            <div key={question._id} className="mx-5 my-5 p-5">
+                                <p>Question: {question?.question}?</p>
+                                <div className="py-3 space-y-3">
+                                    <div
+                                        className={`bg-[#F0F8FF] border border-[#84C5FE] py-1 px-2 flex justify-between ${question.correctAnswer === 'a'
+                                            ? 'bg-green-300'
+                                            : question.selectAnswer === 'a'
+                                                ? 'bg-red-300'
+                                                : 'bg-[#F0F8FF]'
+                                            }`}
+                                    >
+                                        {question?.a} {question.selectAnswer === 'a' && <FaCheck color="white" />}
+                                    </div>
+                                    <div
+                                        className={`bg-[#F0F8FF] border border-[#84C5FE] py-1 px-2 flex justify-between ${question.correctAnswer === 'b'
+                                            ? 'bg-green-300'
+                                            : question.selectAnswer === 'b'
+                                                ? 'bg-red-300'
+                                                : 'bg-[#F0F8FF]'
+                                            }`}
+                                    >
+                                        {question?.b} {question.selectAnswer === 'b' && <FaCheck color="white" />}
+                                    </div>
+                                    <div
+                                        className={`bg-[#F0F8FF] border border-[#84C5FE] py-1 px-2 flex justify-between ${question.correctAnswer === 'c'
+                                            ? 'bg-green-300'
+                                            : question.selectAnswer === 'c'
+                                                ? 'bg-red-300'
+                                                : 'bg-[#F0F8FF]'
+                                            }`}
+                                    >
+                                        {question?.c} {question.selectAnswer === 'c' && <FaCheck color="white" />}
+                                    </div>
+                                    <div
+                                        className={`bg-[#F0F8FF] border border-[#84C5FE] py-1 px-2 flex justify-between ${question.correctAnswer === 'd'
+                                            ? 'bg-green-300'
+                                            : question.selectAnswer === 'd'
+                                                ? 'bg-red-300'
+                                                : 'bg-[#F0F8FF]'
+                                            }`}
+                                    >
+                                        {question?.d} {question.selectAnswer === 'd' && <FaCheck color="white" />}
+                                    </div>
+                                    <hr className="mt-20" />
+                                </div>
+                            </div>
+                        ))}
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    );
+};
+
+export default page;

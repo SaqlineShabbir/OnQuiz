@@ -7,9 +7,7 @@ export async function GET(request, { params }) {
     await connect()
     try {
         const { id } = params;
-
         const categorie = await Category.findOne({ _id: id }).populate({ path: 'quizs', model: Quiz })
-
 
         // Return success response
         return NextResponse.json({
