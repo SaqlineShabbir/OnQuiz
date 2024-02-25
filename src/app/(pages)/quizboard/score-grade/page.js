@@ -5,9 +5,9 @@ import React, { useContext, useEffect, useState } from 'react';
 
 
 const ScoreGrade = () => {
-    const { user, logout } = useContext(AuthContext);
+    const { user, information } = useContext(AuthContext);
 
-    const [information, setInformation] = useState([]);
+
 
     // filter how many quiz test user took
     const exactUserInformation = information?.filter(
@@ -30,24 +30,7 @@ const ScoreGrade = () => {
         (info) => info.score >= 80
     );
 
-    const fetchData = async () => {
-        try {
-            const response = await fetch(`http://localhost:3000/api/result`, {
-                method: 'GET'
-            })
 
-            const data = await response.json()
-            console.log('this is ', data)
-            setInformation(data?.data)
-
-        } catch (error) {
-
-        }
-    }
-
-    useEffect(() => {
-        fetchData()
-    }, [])
 
     return (
 

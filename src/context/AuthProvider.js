@@ -11,7 +11,7 @@ const AuthProvider = ({ children }) => {
     const [user, setUser] = useState(null)
     const router = useRouter()
     const [categories, setCategories] = useState([])
-
+    const [information, setInformation] = useState([]);
     //fetch category data
     const fetchCategoryData = async () => {
         try {
@@ -55,6 +55,25 @@ const AuthProvider = ({ children }) => {
         fetchUser();
     }, []);
 
+    const fetchInfo = async () => {
+        try {
+            const response = await fetch(`http://localhost:3000/api/result`, {
+                method: 'GET'
+            })
+
+            const data = await response.json()
+            console.log('this is ', data)
+            setInformation(data?.data)
+
+        } catch (error) {
+
+        }
+    }
+
+    useEffect(() => {
+        fetchInfo()
+    }, [])
+
 
     const logout = async () => {
         try {
@@ -85,7 +104,8 @@ const AuthProvider = ({ children }) => {
         user,
         categories,
         logout,
-        fetchUser
+        fetchUser,
+        information
 
 
     };
