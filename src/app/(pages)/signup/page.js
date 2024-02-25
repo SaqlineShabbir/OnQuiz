@@ -23,7 +23,7 @@ const page = () => {
                 setError('Password does not match');
             } else {
                 console.log('password matched')
-                const response = await fetch('http://localhost:3000/api/signup', {
+                const response = await fetch('https://on-quiz.vercel.app/api/signup', {
                     method: 'POST',
                     headers: {
                         'Content-Type': 'application/json',
