@@ -1,5 +1,10 @@
+'use client'
+
+import { AuthContext } from "@/context/AuthProvider";
+import { useContext } from "react";
 
 export default function TopBoard({ setOpen }) {
+    const { user, logout } = useContext(AuthContext);
 
     return (
         <header className="h-20 items-center sticky top-0 z-10 lg:ml-[270px] bg-white">
@@ -32,6 +37,7 @@ export default function TopBoard({ setOpen }) {
                     <div className="container flex left-0 relative w-3/4">
                         <div className="group hidden items-center ml-1 relative w-full md:flex lg:w-72">
                             <div className="absolute  cursor-pointer flex items-center justify-center h-10 p-3 pr-2 text-gray-500 text-sm uppercase w-auto sm:hidden">
+
                                 <svg
                                     fill="none"
                                     className="h-5 relative w-5"
@@ -59,22 +65,14 @@ export default function TopBoard({ setOpen }) {
                         </div>
                     </div>
                     <div className="flex items-center justify-end ml-5 p-1 relative w-full sm:mr-0 sm:right-auto">
-                        <a href="#" className="block pr-5">
-                            <svg
-                                xmlns="http://www.w3.org/2000/svg"
-                                className="h-6 w-6"
-                                fill="none"
-                                viewBox="0 0 24 24"
-                                stroke="currentColor"
-                            >
-                                <path
-                                    strokeLinecap="round"
-                                    strokeLinejoin="round"
-                                    strokeWidth={2}
-                                    d="M8.684 13.342C8.886 12.938 9 12.482 9 12c0-.482-.114-.938-.316-1.342m0 2.684a3 3 0 110-2.684m0 2.684l6.632 3.316m-6.632-6l6.632-3.316m0 0a3 3 0 105.367-2.684 3 3 0 00-5.367 2.684zm0 9.316a3 3 0 105.368 2.684 3 3 0 00-5.368-2.684z"
-                                />
-                            </svg>
-                        </a>
+
+                        <div className="flex items-center  cursor-pointer space-x-1  px-5">
+                            {user && <p className='font-bold text-2xl border border-orange-600 rounded-full px-3 py-1'>
+                                {user.fullname.slice(0, 1)}
+                            </p>}
+
+
+                        </div>
                         <a href="#" className="block pr-5">
                             <svg
                                 xmlns="http://www.w3.org/2000/svg"
@@ -107,6 +105,7 @@ export default function TopBoard({ setOpen }) {
                                 />
                             </svg>
                         </p>
+
                         {/* <div onClick={handleLogOut} className="flex cursor-pointer">
               {' '}
               <Image

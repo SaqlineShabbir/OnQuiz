@@ -5,6 +5,7 @@ import React, { useEffect, useState } from 'react';
 
 const page = ({ params }) => {
     const [categoryData, setCategoryData] = useState({})
+
     const fetchData = async () => {
         try {
             const response = await fetch(`https://on-quiz.vercel.app/api/category/${params.id}`, {
@@ -12,7 +13,7 @@ const page = ({ params }) => {
             })
 
             const data = await response.json()
-            console.log(data?.categorie)
+
             setCategoryData(data?.categorie)
 
         } catch (error) {
@@ -80,7 +81,7 @@ const page = ({ params }) => {
                     <br />
                     <Link href={`/questions/${params?.id}`}>
                         <div className="pb-10 lg:pb-0">
-                            <button className="border rounded-full py-2 px-10 bg-gradient-to-l from-[#FF6961]  ">
+                            <button disabled={!categoryData?.quizs?.length} className="border rounded-full py-2 px-10 bg-gradient-to-l from-[#FF6961]  ">
                                 Start quiz
                             </button>
                         </div>

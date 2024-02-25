@@ -105,7 +105,8 @@ const AuthProvider = ({ children }) => {
         categories,
         logout,
         fetchUser,
-        information
+        information,
+        fetchCategoryData
 
 
     };

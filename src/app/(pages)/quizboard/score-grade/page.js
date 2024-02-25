@@ -130,11 +130,11 @@ const ScoreGrade = () => {
                         <div className="space-y-2">
                             {exactUserInformation?.map((ex) =>
                                 ex.score >= 80 ? (
-                                    <Link href="/dashboard/download-certificates">
+                                    <Link href="/quizboard/certificates">
                                         <p className="text-green-500 cursor-pointer">Available</p>
                                     </Link>
                                 ) : (
-                                    <Link href="/dashboard/quiz-test">
+                                    <Link href="/quizboard/quiz-test">
                                         <p className="text-red-500 cursor-pointer">Retake Test</p>
                                     </Link>
                                 )

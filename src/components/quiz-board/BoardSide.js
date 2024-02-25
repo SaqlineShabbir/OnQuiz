@@ -105,7 +105,7 @@ export default function SideNavigation({ setOpen, open }) {
                     </Link>
 
 
-                    <Link href="/dashboard/update-profile">
+                    <Link href="/quizboard/update-profile">
                         <div
                             className={` flex active:bg-orange-500 hover:bg-orange-500 rounded-full text-black my-4 mx-2 py-3 px-2 lg:w-[215px] space-x-2  cursor-pointer`}
                         >
@@ -141,20 +141,18 @@ export default function SideNavigation({ setOpen, open }) {
 
 
 
-                    <Link href="/dashboard/delete-category">
+                    <Link href="/quizboard/manage-category">
                         <div
                             className={` flex active:bg-orange-500 hover:bg-orange-500 rounded-full text-black my-4 mx-2 py-3 px-2 lg:w-[215px] space-x-2 cursor-pointer`}
                         >
                             <span>
                                 <IoMdHome />
                             </span>
-                            <p>Delete Category</p>
+                            <p>Manage Category</p>
                         </div>
                     </Link>
 
-
-
-                    <Link href="/dashboard/post-category">
+                    <Link href="/quizboard/add-category">
                         <div
                             className={` flex active:bg-orange-500 hover:bg-orange-500 rounded-full text-black my-4 mx-2 py-3 px-2 lg:w-[215px] space-x-2 cursor-pointer`}
                         >
