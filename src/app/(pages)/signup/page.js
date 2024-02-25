@@ -1,4 +1,5 @@
 'use client'
+import Navigation from '@/components/shared/Navigation';
 import Link from 'next/link';
 import { useRouter } from 'next/navigation';
 import { useState } from 'react';
@@ -53,7 +54,7 @@ const page = () => {
 
     return (
         <div className="">
-
+            <Navigation></Navigation>
             <div className="lg:flex w-[100%]">
                 <div className=" lg:w-[50%] flex flex-col justify-center items-center px-20 lg:py-0 py-10 ">
                     <div className=" ">

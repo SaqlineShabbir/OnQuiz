@@ -1,9 +1,12 @@
 'use client'
+import Navigation from '@/components/shared/Navigation';
+import { AuthContext } from '@/context/AuthProvider';
 import Link from 'next/link';
 import { useRouter } from 'next/navigation';
-import { useState } from 'react';
+import { useContext, useState } from 'react';
 
 const page = () => {
+    const { fetchUser } = useContext(AuthContext);
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const [error, setError] = useState('');
@@ -20,6 +23,7 @@ const page = () => {
             });
 
             if (response.ok) {
+                fetchUser()
                 router.push('/');
             } else {
                 const errorData = await response.json();
@@ -35,6 +39,7 @@ const page = () => {
 
     return (
         <div className="">
+            <Navigation></Navigation>
             <div className="lg:flex w-[100%] justify-center items-center">
                 <div className=" lg:w-[50%] space-y-5 px-10">
                     <p className="">

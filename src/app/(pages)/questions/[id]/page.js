@@ -1,4 +1,5 @@
 'use client'
+import ProgressBar from '@/components/shared/ProgressBar';
 import { AuthContext } from '@/context/AuthProvider';
 import Link from 'next/link';
 import { useRouter } from 'next/navigation';
@@ -21,7 +22,7 @@ const reducer = (state, action) => {
 };
 const page = ({ params }) => {
     //start
-    const { categories } = useContext(AuthContext);
+    const { categories, user } = useContext(AuthContext);
     const categoryData = categories?.find((category) => category._id === params.id)
 
     // Handle the case where data is not available
@@ -40,7 +41,7 @@ const page = ({ params }) => {
     //fetch category data
     const initialQuestions = categoryData?.quizs;
     const [questions, dispatch] = useReducer(reducer, initialQuestions);
-    console.log('qqqq', questions[currentQuestion]);
+
 
     const router = useRouter()
 
@@ -92,7 +93,53 @@ const page = ({ params }) => {
         localStorage.setItem('questions', JSON.stringify({ id, score, questions }));
     }, [score, id, questions]);
 
+    //post user result to  backend
+    const handlePutUserResult = async (score, id, user) => {
+        try {
 
+            const response = await fetch(`http://localhost:3000/api/result/${id}?email=${user?.email}`, {
+                method: 'GET'
+            })
+
+            const data = await response.json()
+            console.log('this is ', data)
+            if (data?.data.length) {
+                const res = await fetch(`http://localhost:3000/api/result`, {
+                    method: 'POST',
+                    body: JSON.stringify({
+                        score: score,
+                        id: data?.data[0]._id,
+                        name: user?.fullname,
+                        email: user?.email,
+                        quizCategoryId: id,
+                        attempts: Number(data?.data[0]?.attempts) + 1,
+                        lastAnswered: questions,
+                    })
+                })
+                console.log('first res', res)
+            } else {
+                try {
+                    const res = await fetch(`http://localhost:3000/api/result`, {
+                        method: 'POST',
+                        body: JSON.stringify({
+                            email: user?.email,
+                            name: user?.fullname,
+                            quizCategoryId: id,
+                            attempts: '1',
+                            lastAnswered: questions,
+                        })
+                    })
+                    console.log('second res', res)
+                } catch (error) {
+                    console.log(error)
+                }
+
+            }
+
+        } catch (error) {
+            console.log(error)
+        }
+    }
     return (
         <>
             <div>
@@ -100,7 +147,7 @@ const page = ({ params }) => {
                     <div className="flex justify-end text-2xl  pb-4">
                         <p>Timer: {countDown}</p>
                     </div>
-                    {/* <ProgressBar progress={percentage} /> */}
+                    <ProgressBar progress={percentage} />
                     <p>Question: {questions[currentQuestion]?.question}?</p>
                     <div className="py-3  space-y-3">
                         <div
@@ -206,7 +253,7 @@ const page = ({ params }) => {
                         {currentQuestion === questions.length - 1 ? (
                             <Link href={'/result'}>
                                 <button
-                                    // onClick={() => handlePutUserInfo(score, id, user)}
+                                    onClick={() => handlePutUserResult(score, id, user)}
                                     className="bg-gradient-to-l from-[#FF6961] border  px-3 py-1 rounded-xl"
                                 >
                                     Show Result

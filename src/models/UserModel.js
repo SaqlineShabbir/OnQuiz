@@ -40,7 +40,9 @@ const userSchema = new mongoose.Schema({
         type: String,
         enum: ["Admin", "User"],
     },
-
+    attainQuizs: {
+        type: Array,
+    },
 }, { timestamps: true });
 
 const User = mongoose.models.User || mongoose.model("User", userSchema);
