@@ -4,6 +4,26 @@ import Result from "@/models/ResultModel";
 import User from "@/models/UserModel";
 import { NextResponse } from "next/server";
 
+
+export async function GET(request) {
+    try {
+        await connect();
+
+        const data = await Result.find();
+
+        return NextResponse.json({
+            status: 'success',
+            data
+        });
+    } catch (error) {
+        console.error('Error in GET request:', error);
+
+        return NextResponse.json({
+            status: 'failed',
+            error: error.message
+        });
+    }
+}
 //save answerd result
 export async function POST(request) {
     await connect()

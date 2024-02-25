@@ -60,7 +60,7 @@ export default function SideNavigation({ setOpen, open }) {
 
                 {/* <SidenavItems />  */}
                 <div className="overflow-y-auto   h-full">
-                    <Link href="/dashboard">
+                    <Link href="/quizboard">
                         <div className="flex  hover:bg-orange-500 active:bg-orange-700 focus:outline-none focus:ring focus:ring-orange-300 rounded-full text-black my-4 mx-2 py-3 px-2 lg:w-[215px] space-x-2 cursor-pointer">
                             <span>
                                 <IoMdHome />
@@ -81,7 +81,7 @@ export default function SideNavigation({ setOpen, open }) {
                     </Link>
 
 
-                    <Link href="/dashboard/score&grade">
+                    <Link href="/quizboard/score-grade">
                         <div
                             className={` flex active:bg-orange-500 hover:bg-orange-500 rounded-full text-black my-4 mx-2 py-3 px-2 lg:w-[215px] space-x-2  cursor-pointer`}
                         >
