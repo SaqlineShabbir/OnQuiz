@@ -23,7 +23,7 @@ const page = () => {
         e.preventDefault()
         console.log(categoryId)
         try {
-            const response = await fetch(`http://localhost:3000/api/quiz/${categoryId}`, {
+            const response = await fetch(`https://on-quiz.vercel.app/api/quiz/${categoryId}`, {
                 method: 'POST',
                 body: JSON.stringify({ question, a, b, c, d, explanation, correctAnswer }),
             });

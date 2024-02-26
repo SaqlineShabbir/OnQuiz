@@ -97,14 +97,14 @@ const page = ({ params }) => {
     const handlePutUserResult = async (score, id, user) => {
         try {
 
-            const response = await fetch(`http://localhost:3000/api/result/${id}?email=${user?.email}`, {
+            const response = await fetch(`https://on-quiz.vercel.app/api/result/${id}?email=${user?.email}`, {
                 method: 'GET'
             })
 
             const data = await response.json()
             console.log('this is ', data)
             if (data?.data.length) {
-                const res = await fetch(`http://localhost:3000/api/result`, {
+                const res = await fetch(`https://on-quiz.vercel.app/api/result`, {
                     method: 'POST',
                     body: JSON.stringify({
                         score: score,
@@ -119,7 +119,7 @@ const page = ({ params }) => {
                 console.log('first res', res)
             } else {
                 try {
-                    const res = await fetch(`http://localhost:3000/api/result`, {
+                    const res = await fetch(`https://on-quiz.vercel.app/api/result`, {
                         method: 'POST',
                         body: JSON.stringify({
                             email: user?.email,
