@@ -14,7 +14,7 @@ const ManageServices = () => {
     const handleDeleteService = async (id) => {
 
         try {
-            const response = await fetch(`https://on-quiz.vercel.app/api/category/${id}`, {
+            const response = await fetch(`http://localhost:3000/api/category/${id}`, {
                 method: 'DELETE',
             });
             if (response.status === 200) {

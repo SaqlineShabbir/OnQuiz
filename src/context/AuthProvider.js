@@ -15,7 +15,7 @@ const AuthProvider = ({ children }) => {
     //fetch category data
     const fetchCategoryData = async () => {
         try {
-            const response = await fetch(`https://on-quiz.vercel.app/api/category`, {
+            const response = await fetch(`http://localhost:3000/api/category`, {
                 method: 'GET'
             })
 
@@ -57,7 +57,7 @@ const AuthProvider = ({ children }) => {
 
     const fetchInfo = async () => {
         try {
-            const response = await fetch(`https://on-quiz.vercel.app/api/result`, {
+            const response = await fetch(`http://localhost:3000/api/result`, {
                 method: 'GET'
             })
 

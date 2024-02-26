@@ -7,7 +7,7 @@ const page = () => {
     const [categoryData, setCategoryData] = useState([])
     const fetchData = async () => {
         try {
-            const response = await fetch('https://on-quiz.vercel.app/api/category', {
+            const response = await fetch('http://localhost:3000/api/category', {
                 method: 'GET'
             })
 

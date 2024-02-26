@@ -165,7 +165,7 @@ export default function SideNavigation({ setOpen, open }) {
 
 
 
-                    <Link href="/dashboard/post-question">
+                    <Link href="/quizboard/add-question">
                         <div
                             className={` flex active:bg-orange-500 hover:bg-orange-500 rounded-full text-black my-4 mx-2 py-3 px-2 lg:w-[215px] space-x-2 cursor-pointer`}
                         >
