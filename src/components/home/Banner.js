@@ -4,14 +4,14 @@ import img from '../../assets/banner-removebg-preview.png';
 
 const Banner = () => {
     return (
-        <div className="flex justify-center">
-            <div className="bg-pink-100 lg:flex px-5 lg:pl-20 h-[100vh]">
-                <div className="left-side lg:w-[50%] pt-20 pr-5 lg:pr-10">
-                    <p className="text-[#FF807C] text-center lg:text-left">SMART LEARNING</p>
-                    <p className="text-3xl text-center lg:text-left">
+        <div className="flex justify-center items-center h-[90vh] bg-gradient-to-r from-blue-400 to-pink-400">
+            <div className=" lg:flex px-5 lg:pl-20 ">
+                <div className="left-side space-y-3 lg:w-[50%] pt-20 lg:pt-0 pr-5 lg:pr-10">
+                    <p className="text-white text-center lg:text-left">SMART LEARNING</p>
+                    <p className="text-white font-bold text-3xl text-center lg:text-left">
                         PROGRAMMING <br /> QUIZ
                     </p>
-                    <p className="font-mono text-center lg:text-left">
+                    <p className="text-white  font-mono text-center lg:text-left">
                         Quam quisque id diam vel quam elementum pulvinar etiam non. Lobortis
                         feugiat vivamus at augue eget. Eu volutpat odio facilisis mauris sit
                         amet.
@@ -46,7 +46,7 @@ const Banner = () => {
                 </div>
                 <div className="Right-side lg:w-[50%] pl-5 lg:pl-10">
                     <div className="flex justify-center ml-10">
-                        <Image src={img} width={500} height={500} alt="Picture of the author" />
+                        <Image src={img} width={600} height={600} alt="Picture of the author" />
                     </div>
                 </div>
             </div>

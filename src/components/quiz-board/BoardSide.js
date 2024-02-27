@@ -1,9 +1,11 @@
-
+'use client'
 import Link from 'next/link';
 
 import logo from '../../assets/ologo-removebg-preview.png'
 import { IoMdHome } from "react-icons/io";
 import Image from 'next/image';
+import { useContext } from 'react';
+import { AuthContext } from '@/context/AuthProvider';
 
 const style = {
     mobilePosition: {
@@ -17,7 +19,7 @@ const style = {
 };
 
 export default function SideNavigation({ setOpen, open }) {
-
+    const { user, logout } = useContext(AuthContext);
 
     return (
         <aside className={`${style.default} } 
@@ -115,20 +117,7 @@ export default function SideNavigation({ setOpen, open }) {
                             <p>Update Your Profile</p>
                         </div>
                     </Link>
-
-                    <Link href="/dashboard/subscriptions">
-                        <div
-                            className={` flex active:bg-orange-500 hover:bg-orange-500 rounded-full text-black my-4 mx-2 py-3 px-2 lg:w-[215px] space-x-2  cursor-pointer`}
-                        >
-                            <span>
-                                <IoMdHome />
-                            </span>
-                            <p>Subscriptions</p>
-                        </div>
-                    </Link>
-
-
-                    <Link href="/dashboard/review">
+                    <Link href="/quizboard/review">
                         <div
                             className={` flex active:bg-orange-500 hover:bg-orange-500 rounded-full text-black my-4 mx-2 py-3 px-2 lg:w-[215px] space-x-2  cursor-pointer`}
                         >
@@ -200,12 +189,10 @@ export default function SideNavigation({ setOpen, open }) {
                             <p>Make Admin</p>
                         </div>
                     </Link>
-
-
-                    <div className="mt-24">
+                    <div className="mt-5">
                         <button
-                            className="bg-black rounded-full px-12 py-2 ml-6 flex"
-                        //   onClick={handleLogOut}
+                            className="bg-black rounded-full px-7 py-2 ml-3 flex"
+                            onClick={logout}
                         >
                             <svg
                                 xmlns="http://www.w3.org/2000/svg"

@@ -1,125 +1,261 @@
-import Image from 'next/image';
-import React from 'react';
-import img from '../../assets/ologo-removebg-preview.png';
+import Image from "next/image";
+import React from "react";
+// import career from '@/assets/logos/career-removebg-preview.PNG';
+import { FaFacebook, FaInstagram, FaTwitter } from "react-icons/fa";
+import Link from "next/link";
+
+
 const Footer = () => {
     return (
-        <div className="bg-white footer-main  relative">
-            <div className="subscribe  flex justify-center items-center px-20  relative top-20">
-                <div className="bg-gradient-to-r from-orange-400 to-[#FF807C] px-20 space-y-5 py-20 text-center rounded-lg">
-                    <p className="text-white text-2xl font-bold tracking-[8px] ">
-                        UPGRADING YOUR
-                        <br /> SKILLS FREE FOR THIS <br />
-                        MONTH
-                    </p>
-                    <p className="text-sm text-white lg:px-40">
-                        Fermentum dui faucibus in ornare quam viverra orci. Lacus sed
-                        viverra tellus in. Sollicitudin nibh sit amet commodo nulla facilisi
-                        congue eu consequat scelerisque eleifend.
-                    </p>
-                    <input
-                        type="email"
-                        placeholder="Enter Your Email Address"
-                        className="text-sm py-2  px-5 rounded-l-lg"
-                    />
-                    <button className="bg-black py-2 rounded-r-lg text-sm text-white px-3">
-                        Get In Touch
-                    </button>
-                </div>
-            </div>
+        <footer className=" bg-gradient-to-r from-blue-400 to-pink-400">
+            <div className="mx-auto max-w-screen-xl px-4 py-16 sm:px-6 lg:px-8">
+                <div className="lg:flex lg:items-start lg:gap-8">
+                    <div className=" rounded-lg">
+                        {/* <Image
+              className="px-2 py-1 rounded"
+              src={career}
+              width={250}
+              height={190}
+              alt="logo picture"
+            /> */}
+                    </div>
 
-            <div className="footer-start  bg-black ">
-                <div className="logo flex flex-col justify-center items-center text-white  pt-40 pb-20">
-                    <div className="flex">
-                        <Image
-                            src={img}
-                            width={50}
-                            height={50}
-                            alt="Picture of the author"
-                        />{' '}
-                        <p className="pt-4 text-2xl pl-5">ONQUIZ</p>
-                    </div>
-                    <p className="text-gray-300  text-sm px-5 lg:px-20 lg:px-[300px] text-center">
-                        Vulputate sapien nec sagittis aliquam malesuada bibendum arcu vitae.
-                        Morbi quis commodo odio aenean. Blandit turpis cursus in hac
-                        habitasse platea.
-                    </p>
-                </div>
+                    <div className="mt-8 grid grid-cols-2 gap-8 lg:mt-0 lg:grid-cols-5 lg:gap-y-16">
+                        <div className="col-span-2">
+                            <div>
+                                <h2 className="text-2xl font-bold text-gray-900 dark:text-white">
+                                    Get the latest news!
+                                </h2>
 
-                <div className="footer-links grid lg:grid-cols-4 grid-cols-2 gap-5 px-10 lg:px-40 py-10 font-mono">
-                    <div className="space-y-2">
-                        <p className="text-white">ABOUT</p>
-                        <button className="text-gray-300 text-sm ">ABOUT US</button>
-                        <br />
-                        <button className="text-gray-300 text-sm ">LEARNER STORIES</button>
-                        <br />
-                        <button className="text-gray-300 text-sm ">CAREERS</button>
-                        <br />
-                        <button className="text-gray-300 text-sm ">PRESS</button>
-                        <br />
-                        <button className="text-gray-300 text-sm ">LEADERSHIP</button>
-                        <br />
-                        <button className="text-gray-300 text-sm ">CONTACT US</button>
-                    </div>
-                    <div className="space-y-2">
-                        <p className="text-white">ONE PAGES</p>
-                        <button className="text-gray-300 text-sm ">DEVELOPMENT</button>
-                        <br />
-                        <button className="text-gray-300 text-sm ">BUSINESS</button>
-                        <br />
-                        <button className="text-gray-300 text-sm ">
-                            FINANCE & ACCOUNT
-                        </button>
-                        <br />
-                        <button className="text-gray-300 text-sm ">IT &SOFTWARE</button>
-                        <br />
-                        <button className="text-gray-300 text-sm ">
-                            OFFICE PRODUCTIVITY
-                        </button>
-                        <br />
-                        <button className="text-gray-300 text-sm ">DESIGN</button>
-                        <br />
-                        <button className="text-gray-300 text-sm ">MARKETING</button>
-                    </div>
-                    <div className="space-y-2">
-                        <p className="text-white">PAGES</p>
-                        <button className="text-gray-300 text-sm ">DOCUMENTATION</button>
-                        <br />
-                        <button className="text-gray-300 text-sm ">FAQS</button>
-                        <br />
+                                <p className="mt-4 text-white">
+                                    Stay informed with the latest updates! Explore expert insights and valuable resources to enhance your career journey. We are here to guide you through opportunities and challenges, ensuring a successful and fulfilling professional experience.
+                                </p>
+                            </div>
+                        </div>
 
-                        <button className="text-gray-300 text-sm ">DASHBOARD</button>
-                        <br />
-                        <button className="text-gray-300 text-sm ">CONTACT</button>
-                    </div>
-                    <div className="space-y-2">
-                        <p className="text-white">BLOG</p>
-                        <button className="text-gray-300 text-sm ">JOB OPENING</button>
-                        <br />
-                        <button className="text-gray-300 text-sm ">INTERNSHIP</button>
-                        <br />
-                        <button className="text-gray-300 text-sm ">PROMOTE JOB</button>
-                    </div>
-                </div>
-                <div>
-                    <hr className="text-gray-300" />
-                    <div className="flex  justify-center">
-                        <div className="flex text-sm text-gray-300 space-x-20 py-10 px-5 lg:px-0">
-                            <div>
-                                <p>© 2023 OneQuiz </p>
-                                <p>WeDesignTech</p>
-                            </div>
-                            <div>
-                                <p className="pt-6">FB / IN / YU / TW </p>
-                            </div>
-                            <div>
-                                <p>Privacy Policy </p>
-                                <p>Terms & Condition</p>
-                            </div>
+                        <div className="col-span-2 lg:col-span-3 lg:flex lg:items-end">
+                            <form className="w-full">
+                                <label htmlFor="UserEmail" className="sr-only">
+                                    {" "}
+                                    Email{" "}
+                                </label>
+
+                                <div className="border rounded border-gray-100 p-2 focus-within:ring sm:flex sm:items-center sm:gap-4">
+                                    <input
+                                        type="email"
+                                        id="UserEmail"
+                                        placeholder="hello@gmail.com"
+                                        className="w-full py-2 rounded border-none focus:border-transparent focus:ring-transparent p-2"
+                                    />
+
+                                    <button className="mt-1 w-full bg-rose-400 px-6 py-3 text-sm font-bold uppercase tracking-wide text-white transition-none hover:bg-rose-500 sm:mt-0 sm:w-auto sm:shrink-0 rounded">
+                                        Sign Up
+                                    </button>
+                                </div>
+                            </form>
+                        </div>
+
+                        <div className="col-span-2 sm:col-span-1">
+                            <p className="font-medium text-gray-900 dark:text-white">
+                                Services
+                            </p>
+
+                            <ul className="mt-6 space-y-4 text-sm">
+                                <li>
+                                    <a
+                                        href="#"
+                                        className="text-gray-700 transition hover:opacity-75 dark:text-white"
+                                    >
+                                        1on1 Coaching
+                                    </a>
+                                </li>
+
+                                <li>
+                                    <a
+                                        href="#"
+                                        className="text-gray-700 transition hover:opacity-75 dark:text-white"
+                                    >
+                                        Company Review
+                                    </a>
+                                </li>
+
+                                <li>
+                                    <a
+                                        href="#"
+                                        className="text-gray-700 transition hover:opacity-75 dark:text-white"
+                                    >
+                                        Accounts Review
+                                    </a>
+                                </li>
+
+                                <li>
+                                    <a
+                                        href="#"
+                                        className="text-gray-700 transition hover:opacity-75 dark:text-white"
+                                    >
+                                        HR Consulting
+                                    </a>
+                                </li>
+
+                                <li>
+                                    <a
+                                        href="#"
+                                        className="text-gray-700 transition hover:opacity-75 dark:text-white"
+                                    >
+                                        SEO Optimisation
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <div className="col-span-2 sm:col-span-1">
+                            <p className="font-medium text-gray-900 dark:text-white">
+                                Company
+                            </p>
+
+                            <ul className="mt-6 space-y-4 text-sm">
+                                <li>
+                                    <a
+                                        href="#"
+                                        className="text-gray-700 transition hover:opacity-75 dark:text-white"
+                                    >
+                                        About
+                                    </a>
+                                </li>
+
+                                <li>
+                                    <a
+                                        href="#"
+                                        className="text-gray-700 transition hover:opacity-75 dark:text-white"
+                                    >
+                                        Meet the Team
+                                    </a>
+                                </li>
+
+                                <li>
+                                    <a
+                                        href="#"
+                                        className="text-gray-700 transition hover:opacity-75 dark:text-white"
+                                    >
+                                        Accounts Review
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <div className="col-span-2 sm:col-span-1">
+                            <p className="font-medium text-gray-900 dark:text-white">
+                                Helpful Links
+                            </p>
+
+                            <ul className="mt-6 space-y-4 text-sm">
+                                <li>
+                                    <a
+                                        href="#"
+                                        className="text-gray-700 transition hover:opacity-75 dark:text-white"
+                                    >
+                                        Contact
+                                    </a>
+                                </li>
+
+                                <li>
+                                    <a
+                                        href="#"
+                                        className="text-gray-700 transition hover:opacity-75 dark:text-white"
+                                    >
+                                        FAQs
+                                    </a>
+                                </li>
+
+                                <li>
+                                    <a
+                                        href="#"
+                                        className="text-gray-700 transition hover:opacity-75 dark:text-white"
+                                    >
+                                        Live Chat
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <div className="col-span-2 sm:col-span-1">
+                            <p className="font-medium text-gray-900 dark:text-white">Legal</p>
+
+                            <ul className="mt-6 space-y-4 text-sm">
+                                <li>
+                                    <a
+                                        href="#"
+                                        className="text-gray-700 transition hover:opacity-75 dark:text-white"
+                                    >
+                                        Accessibility
+                                    </a>
+                                </li>
+
+                                <li>
+                                    <a
+                                        href="#"
+                                        className="text-gray-700 transition hover:opacity-75 dark:text-white"
+                                    >
+                                        Hiring Statistics
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <div className="col-span-2 flex justify-start gap-6 lg:col-span-5 lg:justify-end">
+                            <Link href="#">
+                                <FaFacebook className="text-white w-8 h-8 hover:scale-105 duration-300" />
+                            </Link>
+
+                            <Link href="#">
+                                <FaInstagram className="text-white w-8 h-8 hover:scale-105 duration-300" />
+                            </Link>
+
+                            <Link href="#">
+                                <FaTwitter className="text-white w-8 h-8 hover:scale-105 duration-300" />
+                            </Link>
                         </div>
                     </div>
                 </div>
+
+                <div className="mt-8 border-t border-gray-100 pt-8 dark:border-gray-800">
+                    <div className="sm:flex sm:justify-between">
+                        <p className="text-xs text-white dark:text-white">
+                            &copy; {new Date().getFullYear()}. Company Name. All rights reserved.
+                        </p>
+
+                        <ul className="mt-8 flex flex-wrap justify-start gap-4 text-xs sm:mt-0 lg:justify-end">
+                            <li>
+                                <a
+                                    href="#"
+                                    className="text-white transition hover:opacity-75 dark:text-white"
+                                >
+                                    Terms & Conditions
+                                </a>
+                            </li>
+
+                            <li>
+                                <a
+                                    href="#"
+                                    className="text-white transition hover:opacity-75 dark:text-white"
+                                >
+                                    Privacy Policy
+                                </a>
+                            </li>
+
+                            <li>
+                                <a
+                                    href="#"
+                                    className="text-white transition hover:opacity-75 dark:text-white"
+                                >
+                                    Cookies
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
             </div>
-        </div>
+        </footer>
     );
 };
 

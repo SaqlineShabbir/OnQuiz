@@ -34,7 +34,7 @@ const ScoreGrade = () => {
 
     return (
 
-        <div className="  border rounded  border-[#FFAE96] min-h-[100vh]">
+        <div className=" min-h-[100vh]">
             <div className="flex justify-between px-5  my-5">
                 <p className="font-bold text-xl">Summary</p>
                 <div className="group hidden items-center ml-1 relative w-full md:flex lg:w-72">

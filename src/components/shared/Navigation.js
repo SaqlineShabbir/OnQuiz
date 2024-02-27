@@ -17,8 +17,8 @@ export default function Navigation() {
 
     return (
         <nav
-            id="home"
-            className="w-full relative py-5 border-b-[1px] shadow">
+
+            className="w-full relative py-5 border-b-[1px] shadow  bg-gradient-to-r from-blue-400 to-pink-400">
             <div className="md:flex justify-between items-center md:px-[100px] px-5 ">
                 <div>
                     {/* comment */}
@@ -76,7 +76,7 @@ export default function Navigation() {
 
 
                             <div className="flex items-center  cursor-pointer space-x-1">
-                                {user && <p className='font-bold text-2xl border border-orange-600 rounded-full px-3'>
+                                {user && <p className='font-bold text-2xl border border-white rounded-full px-3'>
                                     {user.fullname.slice(0, 1)}
                                 </p>}
 
