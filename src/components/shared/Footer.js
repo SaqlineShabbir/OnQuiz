@@ -7,8 +7,9 @@ import Link from "next/link";
 
 const Footer = () => {
     return (
-        <footer className=" bg-gradient-to-r from-blue-400 to-pink-400">
-            <div className="mx-auto max-w-screen-xl px-4 py-16 sm:px-6 lg:px-8">
+        <footer className=" bg-gradient-to-r from-blue-600 to-black border-t border-black">
+
+            <div className="mx-auto  px-4 py-16 sm:px-6 lg:px-8">
                 <div className="lg:flex lg:items-start lg:gap-8">
                     <div className=" rounded-lg">
                         {/* <Image

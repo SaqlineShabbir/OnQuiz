@@ -11,7 +11,7 @@ const page = () => {
         (info) => info?.email === user?.email
     );
     return (
-        <div className="min-h-[100vh] p-3 lg:p-5 rounded">
+        <div className="min-h-[100vh] p-3 lg:p-5 rounded ">
             <div className="flex space-x-5">
                 {user?.photo ? <div className="pr-2">
                     {user?.photo && (

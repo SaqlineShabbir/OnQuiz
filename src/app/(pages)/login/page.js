@@ -38,10 +38,10 @@ const page = () => {
     }
 
     return (
-        <div className="">
+        <div className="bg-gradient-to-r from-blue-600 to-black  min-h-[100vh]">
             <Navigation></Navigation>
-            <div className="lg:flex w-[100%] justify-center items-center">
-                <div className=" lg:w-[50%] space-y-5 px-10">
+            <div className="lg:flex lg:justify-center lg:items-center ">
+                <div className=" lg:w-[50%] space-y-5 px-10 text-white">
                     <p className="">
                         Those people who develop the ability to continuously acquire new
                         and better forms of knowledge that they can apply to their work
@@ -50,7 +50,7 @@ const page = () => {
                     </p>
                     <p>Brian Tracy</p>
                 </div>
-                <div className="lg:px-20 px-3 lg:w-[50%]">
+                <div className="lg:px-20 px-3 lg:w-[50%]    text-white">
                     <div className="flex flex-col justify-center items-center gap-10 mt-10">
                         <p className="flex  items-center lg:text-4xl text-2xl font-bold">
                             Log In

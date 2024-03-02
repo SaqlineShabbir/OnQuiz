@@ -7,7 +7,7 @@ export default function TopBoard({ setOpen }) {
     const { user, logout } = useContext(AuthContext);
 
     return (
-        <header className="h-20 items-center sticky top-0 z-10 lg:ml-[270px] bg-white">
+        <header className="h-20 items-center  lg:ml-[270px]  text-white">
             <div className="flex flex-center flex-col h-full justify-center mx-auto relative px-3  z-10">
                 <div className="flex items-center pl-1 relative w-full sm:ml-0 sm:pr-2 lg:max-w-68">
                     <div className="flex group h-full items-center relative w-12">

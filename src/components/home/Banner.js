@@ -4,7 +4,7 @@ import img from '../../assets/banner-removebg-preview.png';
 
 const Banner = () => {
     return (
-        <div className="flex justify-center items-center h-[90vh] bg-gradient-to-r from-blue-400 to-pink-400">
+        <div className="flex justify-center items-center lg:h-[90vh] h-full bg-gradient-to-r from-blue-600 to-black">
             <div className=" lg:flex px-5 lg:pl-20 ">
                 <div className="left-side space-y-3 lg:w-[50%] pt-20 lg:pt-0 pr-5 lg:pr-10">
                     <p className="text-white text-center lg:text-left">SMART LEARNING</p>

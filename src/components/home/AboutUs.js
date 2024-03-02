@@ -3,7 +3,7 @@ import React from 'react';
 import img from '../../assets/aboutus-removebg-preview.png';
 const AboutUs = () => {
     return (
-        <div className="about-main lg:flex w-[100%] py-32  px-5 lg:px-20 space-x-5 bg-white">
+        <div className="about-main lg:flex w-[100%] py-32  px-5 lg:px-20 space-x-5 bg-gradient-to-r from-blue-600 to-black  text-white">
             <div className="about-left  lg:w-[50%] ">
                 <Image src={img} width={700} height={600} alt="Picture of the author" />
             </div>

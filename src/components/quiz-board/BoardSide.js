@@ -12,10 +12,10 @@ const style = {
         left: 'left-0 ',
         right: 'left-0 lg:left-0',
     },
-    container: `pb-32 lg:pb-12  min-h-screen`,
-    close: `duration-700 ease-out hidden transition-all lg:w-[250px]`,
-    open: `absolute duration-500 ease-in transition-all w-6/12 z-40 sm:w-5/12 md:w-64  lg:w-[250px]`,
-    default: `h-screen  text-white top-0 lg:absolute bg-white-900 lg:block lg:z-40`,
+    container: `pb-32 lg:pb-12  min-h-screen  `,
+    close: `duration-700 ease-out hidden transition-all lg:w-[250px] text-white`,
+    open: `absolute duration-500 ease-in transition-all w-6/12 z-40 sm:w-5/12 md:w-64  lg:w-[250px]  `,
+    default: `h-screen  text-white top-0 lg:absolute bg-white-900 lg:block lg:z-40 `,
 };
 
 export default function SideNavigation({ setOpen, open }) {
@@ -25,9 +25,9 @@ export default function SideNavigation({ setOpen, open }) {
         <aside className={`${style.default} } 
         ${open ? style.open : style.close}  lg:${() => setOpen(false)}`}
         >
-            <div className={`${style.container} ${open == true && 'bg-orange-600'} `}>
+            <div className={`${style.container} ${open == true && ''} `}>
                 {/* <SidenavHeader /> */}
-                <div className="bg-white flex  mb-6 pb-6 pt-3 sticky top-0 z-10">
+                <div className=" flex  mb-6 pb-6 pt-3 ">
                     <Link href="/">
                         <div className="flex  pl-3 cursor-pointer pt-1">
                             <Image src={logo} width={30} height={30} />
@@ -40,7 +40,7 @@ export default function SideNavigation({ setOpen, open }) {
                             aria-expanded="false"
                             aria-label="Toggle sidenav"
                             onClick={() => setOpen(false)}
-                            className="text-4xl text-black focus:outline-none"
+                            className="text-4xl text-white focus:outline-none"
                         >
                             <svg
                                 xmlns="http://www.w3.org/2000/svg"
@@ -61,9 +61,9 @@ export default function SideNavigation({ setOpen, open }) {
                 </div>
 
                 {/* <SidenavItems />  */}
-                <div className="overflow-y-auto   h-full">
+                <div className="overflow-y-auto text-white  h-full">
                     <Link href="/quizboard">
-                        <div className="flex  hover:bg-orange-500 active:bg-orange-700 focus:outline-none focus:ring focus:ring-orange-300 rounded-full text-black my-4 mx-2 py-3 px-2 lg:w-[215px] space-x-2 cursor-pointer">
+                        <div className="flex  hover:bg-orange-500 active:bg-orange-700 focus:outline-none focus:ring focus:ring-orange-300 rounded-full text-white my-4 mx-2 py-3 px-2 lg:w-[215px] space-x-2 cursor-pointer">
                             <span>
                                 <IoMdHome />
                             </span>
@@ -73,7 +73,7 @@ export default function SideNavigation({ setOpen, open }) {
 
                     <Link href="/quizboard/quiz-test">
                         <div
-                            className={`flex active:bg-orange-500 hover:bg-orange-500 rounded-full text-black my-4 mx-2 py-3 px-2 lg:w-[215px] space-x-2  cursor-pointer`}
+                            className={`flex active:bg-orange-500 hover:bg-orange-500 rounded-full  my-4 mx-2 py-3 px-2 lg:w-[215px] space-x-2  cursor-pointer`}
                         >
                             <span>
                                 <IoMdHome />
@@ -85,7 +85,7 @@ export default function SideNavigation({ setOpen, open }) {
 
                     <Link href="/quizboard/score-grade">
                         <div
-                            className={` flex active:bg-orange-500 hover:bg-orange-500 rounded-full text-black my-4 mx-2 py-3 px-2 lg:w-[215px] space-x-2  cursor-pointer`}
+                            className={` flex active:bg-orange-500 hover:bg-orange-500 rounded-full  my-4 mx-2 py-3 px-2 lg:w-[215px] space-x-2  cursor-pointer`}
                         >
                             <span>
                                 <IoMdHome />
@@ -97,7 +97,7 @@ export default function SideNavigation({ setOpen, open }) {
 
                     <Link href="/quizboard/certificates">
                         <div
-                            className={` flex active:bg-orange-500 hover:bg-orange-500 rounded-full text-black my-4 mx-2 py-3 px-2 lg:w-[215px] space-x-2  cursor-pointer`}
+                            className={` flex active:bg-orange-500 hover:bg-orange-500 rounded-full my-4 mx-2 py-3 px-2 lg:w-[215px] space-x-2  cursor-pointer`}
                         >
                             <span>
                                 <IoMdHome />
@@ -109,7 +109,7 @@ export default function SideNavigation({ setOpen, open }) {
 
                     <Link href="/quizboard/update-profile">
                         <div
-                            className={` flex active:bg-orange-500 hover:bg-orange-500 rounded-full text-black my-4 mx-2 py-3 px-2 lg:w-[215px] space-x-2  cursor-pointer`}
+                            className={` flex active:bg-orange-500 hover:bg-orange-500 rounded-full my-4 mx-2 py-3 px-2 lg:w-[215px] space-x-2  cursor-pointer`}
                         >
                             <span>
                                 <IoMdHome />
@@ -119,7 +119,7 @@ export default function SideNavigation({ setOpen, open }) {
                     </Link>
                     <Link href="/quizboard/review">
                         <div
-                            className={` flex active:bg-orange-500 hover:bg-orange-500 rounded-full text-black my-4 mx-2 py-3 px-2 lg:w-[215px] space-x-2  cursor-pointer`}
+                            className={` flex active:bg-orange-500 hover:bg-orange-500 rounded-full my-4 mx-2 py-3 px-2 lg:w-[215px] space-x-2  cursor-pointer`}
                         >
                             <span>
                                 <IoMdHome />
@@ -132,7 +132,7 @@ export default function SideNavigation({ setOpen, open }) {
 
                     <Link href="/quizboard/manage-category">
                         <div
-                            className={` flex active:bg-orange-500 hover:bg-orange-500 rounded-full text-black my-4 mx-2 py-3 px-2 lg:w-[215px] space-x-2 cursor-pointer`}
+                            className={` flex active:bg-orange-500 hover:bg-orange-500 rounded-full  my-4 mx-2 py-3 px-2 lg:w-[215px] space-x-2 cursor-pointer`}
                         >
                             <span>
                                 <IoMdHome />
@@ -143,7 +143,7 @@ export default function SideNavigation({ setOpen, open }) {
 
                     <Link href="/quizboard/add-category">
                         <div
-                            className={` flex active:bg-orange-500 hover:bg-orange-500 rounded-full text-black my-4 mx-2 py-3 px-2 lg:w-[215px] space-x-2 cursor-pointer`}
+                            className={` flex active:bg-orange-500 hover:bg-orange-500 rounded-full my-4 mx-2 py-3 px-2 lg:w-[215px] space-x-2 cursor-pointer`}
                         >
                             <span>
                                 <IoMdHome />
@@ -156,7 +156,7 @@ export default function SideNavigation({ setOpen, open }) {
 
                     <Link href="/quizboard/add-question">
                         <div
-                            className={` flex active:bg-orange-500 hover:bg-orange-500 rounded-full text-black my-4 mx-2 py-3 px-2 lg:w-[215px] space-x-2 cursor-pointer`}
+                            className={` flex active:bg-orange-500 hover:bg-orange-500 rounded-full my-4 mx-2 py-3 px-2 lg:w-[215px] space-x-2 cursor-pointer`}
                         >
                             <span>
                                 <IoMdHome />
@@ -168,7 +168,7 @@ export default function SideNavigation({ setOpen, open }) {
 
                     <Link href="/dashboard/manage-students">
                         <div
-                            className={` flex active:bg-orange-500 hover:bg-orange-500 rounded-full text-black my-4 mx-2 py-3 px-2 lg:w-[215px] space-x-2 cursor-pointer`}
+                            className={` flex active:bg-orange-500 hover:bg-orange-500 rounded-full my-4 mx-2 py-3 px-2 lg:w-[215px] space-x-2 cursor-pointer`}
                         >
                             <span>
                                 <IoMdHome />
@@ -181,7 +181,7 @@ export default function SideNavigation({ setOpen, open }) {
 
                     <Link href="/dashboard/make-admin">
                         <div
-                            className={` flex active:bg-orange-500 hover:bg-orange-500 rounded-full text-black my-4 mx-2 py-3 px-2 lg:w-[215px] space-x-2 cursor-pointer`}
+                            className={` flex active:bg-orange-500 hover:bg-orange-500 rounded-full  my-4 mx-2 py-3 px-2 lg:w-[215px] space-x-2 cursor-pointer`}
                         >
                             <span>
                                 <IoMdHome />
@@ -191,7 +191,7 @@ export default function SideNavigation({ setOpen, open }) {
                     </Link>
                     <div className="mt-5">
                         <button
-                            className="bg-black rounded-full px-7 py-2 ml-3 flex"
+                            className=" rounded-full px-7 py-2 ml-3 flex"
                             onClick={logout}
                         >
                             <svg

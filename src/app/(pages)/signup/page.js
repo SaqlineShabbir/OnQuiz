@@ -53,9 +53,9 @@ const page = () => {
 
 
     return (
-        <div className="">
+        <div className="bg-gradient-to-r from-blue-600 to-black min-h-[100vh]">
             <Navigation></Navigation>
-            <div className="lg:flex w-[100%]">
+            <div className="lg:flex w-[100%] text-white">
                 <div className=" lg:w-[50%] flex flex-col justify-center items-center px-20 lg:py-0 py-10 ">
                     <div className=" ">
                         <div className="space-y-5">

@@ -6,7 +6,6 @@ import Image from 'next/image';
 import { FiMenu } from "react-icons/fi";
 import { MdClose } from "react-icons/md";
 import logo from '../../assets/ologo-removebg-preview.png'
-import { FaUserCircle } from 'react-icons/fa';
 import { AuthContext } from '@/context/AuthProvider';
 
 
@@ -17,8 +16,7 @@ export default function Navigation() {
 
     return (
         <nav
-
-            className="w-full relative py-5 border-b-[1px] shadow  bg-gradient-to-r from-blue-400 to-pink-400">
+            className="w-full  py-5 border-b-[1px] border-b-gray-600 shadow  bg-gradient-to-r from-blue-600 to-black sticky top-0 z-10">
             <div className="md:flex justify-between items-center md:px-[100px] px-5 ">
                 <div>
                     {/* comment */}
@@ -27,8 +25,8 @@ export default function Navigation() {
                             <Link href='/'>
                                 <Image
                                     src={logo}
-                                    width={60}
-                                    height={60}
+                                    width={40}
+                                    height={40}
                                     alt="Logo"
                                 />
                             </Link>
@@ -60,10 +58,10 @@ export default function Navigation() {
                     >
                         <ul className="items-center justify-center space-y-8 md:flex md:space-x-4 md:space-y-0">
 
-                            <div className='flex space-x-4'>
-                                <Link className='cursor-pointer' href="/quizboard">Quizboard</Link>
+                            <div className='lg:flex space-x-4 text-white'>
+                                <Link className='cursor-pointer text-white' href="/quizboard">Quizboard</Link>
                                 {!user && <li>
-                                    <Link className='cursor-pointer' href="/login">Login</Link>
+                                    <Link className='cursor-pointer text-white' href="/login">Login</Link>
                                 </li>}
                                 {user && <li>
                                     <p className='cursor-pointer' onClick={() => logout()}>Logout</p>
@@ -76,16 +74,12 @@ export default function Navigation() {
 
 
                             <div className="flex items-center  cursor-pointer space-x-1">
-                                {user && <p className='font-bold text-2xl border border-white rounded-full px-3'>
+                                {user && <p className='font-bold text-2xl border border-white rounded-full px-3 text-white'>
                                     {user.fullname.slice(0, 1)}
                                 </p>}
 
 
                             </div>
-
-
-
-
                         </ul>
                     </div>
                 </div>
