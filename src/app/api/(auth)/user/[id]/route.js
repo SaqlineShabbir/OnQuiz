@@ -20,6 +20,7 @@ export async function PATCH(request, { params }) {
             }, { status: 404 }); // Using 404 Not Found for resource not found
         }
 
+
         // Return success response with the updated booking data
         return NextResponse.json({
             message: "Successfully updated",

@@ -58,10 +58,11 @@ export default function Navigation() {
                     >
                         <ul className="items-center justify-center space-y-8 md:flex md:space-x-4 md:space-y-0">
 
-                            <div className='lg:flex space-x-4 text-white'>
-                                <Link className='cursor-pointer text-white' href="/quizboard">Quizboard</Link>
+                            <div className='lg:flex space-x-4 text-gray-200'>
+                                <Link className='cursor-pointer ' href="/">Home</Link>
+                                <Link className='cursor-pointer ' href="/quizboard">Quizboard</Link>
                                 {!user && <li>
-                                    <Link className='cursor-pointer text-white' href="/login">Login</Link>
+                                    <Link className='cursor-pointer ' href="/login">Login</Link>
                                 </li>}
                                 {user && <li>
                                     <p className='cursor-pointer' onClick={() => logout()}>Logout</p>
@@ -74,7 +75,7 @@ export default function Navigation() {
 
 
                             <div className="flex items-center  cursor-pointer space-x-1">
-                                {user && <p className='font-bold text-2xl border border-white rounded-full px-3 text-white'>
+                                {user && <p className='font-bold text-2xl border border-white rounded-full px-3 text-gray-200'>
                                     {user.fullname.slice(0, 1)}
                                 </p>}
 

@@ -12,7 +12,7 @@ const page = () => {
             })
 
             const data = await response.json()
-            console.log(data)
+
             setCategoryData(data?.categories)
 
         } catch (error) {
@@ -24,7 +24,7 @@ const page = () => {
         fetchData()
     }, [])
     return (
-        <div className="p-5 min-h-full ">
+        <div className="p-5 min-h-full text-gray-200">
             <div className="lg:flex justify-between pb-5">
                 <div>
                     <p className="text-2xl  font-bold">Select Quiz Topic for Test</p>

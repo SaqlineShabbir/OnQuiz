@@ -5,6 +5,7 @@ import React, { createContext, useEffect, useState } from 'react';
 import { useRouter } from 'next/navigation';
 
 
+
 export const AuthContext = createContext(null);
 
 const AuthProvider = ({ children }) => {
@@ -62,7 +63,7 @@ const AuthProvider = ({ children }) => {
             })
 
             const data = await response.json()
-            console.log('this is ', data)
+
             setInformation(data?.data)
 
         } catch (error) {
@@ -81,9 +82,9 @@ const AuthProvider = ({ children }) => {
 
             if (response.ok) {
                 // If the response status is 200 OK
-                console.log('Logout successful');
 
 
+                // cookies.remove(cookieName);
                 // Redirect the user to the login page
                 router.push('/login');
                 setUser(null)

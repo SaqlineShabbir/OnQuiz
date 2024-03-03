@@ -18,6 +18,7 @@ export async function POST(request) {
         // Check if user exists
         const userExist = await User.findOne({ email });
 
+
         if (!userExist) {
             return NextResponse.json({ error: "Authentication Failed please signup" }, { status: 404 });
         }
@@ -47,6 +48,14 @@ export async function POST(request) {
             httpOnly: true,
 
         })
+        if (userExist.role === 'Admin') {
+            console.log('done')
+            response.cookies.set("Admin", 'Admin', {
+                httpOnly: true,
+
+            })
+
+        }
         return response
     } catch (error) {
         console.error(error.message);

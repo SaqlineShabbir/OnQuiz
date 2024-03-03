@@ -14,14 +14,14 @@ const page = () => {
     const [explanation, setExplanation] = useState('')
     const { user, categories, fetchCategoryData } = useContext(AuthContext);
 
-    console.log('hii', categoryId)
+
     const handleCategoryId = (catId) => {
         setCategoryId(catId);
     };
 
     const handleSubmit = async (e) => {
         e.preventDefault()
-        console.log(categoryId)
+
         try {
             const response = await fetch(`https://on-quiz.vercel.app/api/quiz/${categoryId}`, {
                 method: 'POST',
@@ -46,14 +46,14 @@ const page = () => {
     }
     return (
 
-        <div className="flex justify-center">
+        <div className="flex justify-center ">
             <Toaster />
-            <div>
+            <div className="text-gray-200">
                 <h2>Choose Category</h2>
                 <div className="grid  grid-cols-7 p-6 space-x-5 space-y-5 cursor-pointer">
                     {categories.map((cat) => (
                         <p
-                            className="bg-purple-200 rounded-full px-5 py-3"
+                            className="border rounded-full px-5 py-3"
                             onClick={() => handleCategoryId(cat._id)}
                             key={cat._id}
                         >

@@ -31,21 +31,21 @@ const page = () => {
 
     }
     return (
-        <div className="flex justify-center  ">
+        <div className="flex justify-center  text-gray-200">
             <div className="mt-20">
 
                 <form
-                    className="mx-10 bg-red-50 px-10 py-10 mt-20"
+                    className="mx-10 border px-10 py-10 mt-20"
                     onSubmit={handleSubmit}
                 >
-                    <label className='text-lg text-slate-500' >Category Name</label><br />
+                    <label className='text-lg ' >Category Name</label><br />
                     <input
                         className="p-3  border"
                         placeholder="Enter Category Name"
                         onChange={(e) => setName(e.target.value)}
                     />
                     <br />
-                    <label className='text-lg text-slate-500' >Image</label>
+                    <label className='text-lg ' >Image</label>
                     <div className='flex space-x-2'>
                         <label className="flex justify-center items-center px-4 py-2 bg-pink-100 text-orange-500 rounded-md cursor-pointer border-2 border-orange-300 w-full">
                             <IoCloudUploadOutline className="w-8 h-8 mr-4" />

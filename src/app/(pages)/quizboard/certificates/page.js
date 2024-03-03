@@ -9,10 +9,10 @@ const page = () => {
     const exactUserInformation = information
         ?.filter((info) => info?.email === user?.email)
         .filter((data) => data.score >= 80);
-    console.log(exactUserInformation);
+
     return (
 
-        <div className=" border rounded  border-[#FFAE96] min-h-[100vh]">
+        <div className=" rounded  text-gray-200">
             <div className="flex justify-between px-5  my-5">
                 <p className="font-bold text-xl">List of Certifications</p>
                 <div className="group hidden items-center ml-1 relative w-full md:flex lg:w-72">
@@ -38,7 +38,7 @@ const page = () => {
                     </svg>
                     <input
                         type="text"
-                        className="border border-orange-300 block leading-normal pl-10 py-1.5 pr-4 ring-opacity-90 rounded-2xl text-gray-400 w-full focus:border-transparent focus:outline-none focus:ring-2 focus:ring-gray-500"
+                        className="border border-orange-300 bg-gray-200 block leading-normal pl-10 py-1.5 pr-4 ring-opacity-90 rounded-2xl text-gray-400 w-full focus:border-transparent focus:outline-none focus:ring-2 focus:ring-gray-500"
                         placeholder="Search"
                     />
                 </div>

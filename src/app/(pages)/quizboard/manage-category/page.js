@@ -36,7 +36,7 @@ const ManageServices = () => {
 
 
     return (
-        <div className=' h-screen'>
+        <div className=' h-screen px-5'>
             <Toaster />
             <div className='grid grid-cols-1 md:grid-cols-3 gap-6 py-20'>
                 {categories?.map((category) => (

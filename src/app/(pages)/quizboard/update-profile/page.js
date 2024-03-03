@@ -36,7 +36,7 @@ const page = () => {
 
     return (
 
-        <div className=" min-h-[100vh] flex justify-center items-center">
+        <div className=" flex justify-center items-center text-gray-200">
 
             <div className="px-7 py-4">
                 <Toaster />

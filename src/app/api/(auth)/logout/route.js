@@ -14,6 +14,10 @@ export async function GET() {
             httpOnly: true,
             expires: new Date(0) // Set the expiration date to a time in the past
         });
+        response.cookies.set('Admin', '', {
+            httpOnly: true,
+            expires: new Date(0) // Set the expiration date to a time in the past
+        });
         return response
     } catch (error) {
         return NextResponse.json(

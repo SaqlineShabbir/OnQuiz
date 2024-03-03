@@ -1,10 +1,11 @@
 'use client'
+import Image from 'next/image';
 import Navigation from '@/components/shared/Navigation';
 import { AuthContext } from '@/context/AuthProvider';
 import Link from 'next/link';
 import { useRouter } from 'next/navigation';
 import { useContext, useState } from 'react';
-
+import img from '../../../assets/sign-removebg.png'
 const page = () => {
     const { fetchUser } = useContext(AuthContext);
     const [email, setEmail] = useState('');
@@ -38,19 +39,13 @@ const page = () => {
     }
 
     return (
-        <div className="bg-gradient-to-r from-blue-600 to-black  min-h-[100vh]">
+        <div className="bg-gradient-to-r from-blue-600 to-black">
             <Navigation></Navigation>
-            <div className="lg:flex lg:justify-center lg:items-center ">
-                <div className=" lg:w-[50%] space-y-5 px-10 text-white">
-                    <p className="">
-                        Those people who develop the ability to continuously acquire new
-                        and better forms of knowledge that they can apply to their work
-                        and to their lives will be the movers and shakers in our society
-                        for the indefinite future
-                    </p>
-                    <p>Brian Tracy</p>
+            <div className="lg:flex  justify-center items-center py-auto min-h-[90vh]  lg:py-0">
+                <div className=" lg:w-[50%] ">
+                    <Image className='lg:pt-10' src={img} width={700} height={700} />
                 </div>
-                <div className="lg:px-20 px-3 lg:w-[50%]    text-white">
+                <div className=" lg:w-[50%] text-gray-200">
                     <div className="flex flex-col justify-center items-center gap-10 mt-10">
                         <p className="flex  items-center lg:text-4xl text-2xl font-bold">
                             Log In

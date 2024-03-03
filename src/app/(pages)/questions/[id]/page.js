@@ -142,8 +142,8 @@ const page = ({ params }) => {
     }
     return (
         <>
-            <div>
-                <div className="border border-[#FFAE96] rounded lg:mx-40 mx-5 my-10 lg:p-20 p-5">
+            <div className='bg-gradient-to-r from-blue-600 min-h-[100vh] to-black text-gray-200 pt-20'>
+                <div className="border border-[#FFAE96] rounded lg:mx-40 mx-5 py-10 lg:p-20 p-5">
                     <div className="flex justify-end text-2xl  pb-4">
                         <p>Timer: {countDown}</p>
                     </div>
@@ -152,7 +152,7 @@ const page = ({ params }) => {
                     <div className="py-3  space-y-3">
                         <div
                             onClick={() => handleAnswer(questions[currentQuestion]?._id, 'a')}
-                            className="bg-[#F0F8FF] border border-[#84C5FE] py-1 px-2 flex justify-between"
+                            className="bg-blue-800 border border-[#84C5FE] py-1 px-2 flex justify-between"
                         >
                             {questions[currentQuestion]?.a}
                             {/* //select icon */}
@@ -175,7 +175,7 @@ const page = ({ params }) => {
                         </div>
                         <div
                             onClick={() => handleAnswer(questions[currentQuestion]?._id, 'b')}
-                            className="bg-[#F0F8FF] border border-[#84C5FE] py-1 px-2 flex justify-between"
+                            className="bg-blue-800 border border-[#84C5FE] py-1 px-2 flex justify-between"
                         >
                             {questions[currentQuestion]?.b}
                             {selected === 'b' && (
@@ -197,7 +197,7 @@ const page = ({ params }) => {
                         </div>
                         <div
                             onClick={() => handleAnswer(questions[currentQuestion]?._id, 'c')}
-                            className="bg-[#F0F8FF] border border-[#84C5FE] py-1 px-2 flex justify-between"
+                            className="bg-blue-800 border border-[#84C5FE] py-1 px-2 flex justify-between"
                         >
                             {questions[currentQuestion]?.c}
                             {selected === 'c' && (
@@ -219,7 +219,7 @@ const page = ({ params }) => {
                         </div>
                         <div
                             onClick={() => handleAnswer(questions[currentQuestion]?._id, 'd')}
-                            className="bg-[#F0F8FF] border border-[#84C5FE] py-1 px-2  flex justify-between"
+                            className="bg-blue-800 border border-[#84C5FE] py-1 px-2  flex justify-between"
                         >
                             {questions[currentQuestion]?.d}
                             {selected === 'd' && (

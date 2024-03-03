@@ -25,7 +25,7 @@ const page = ({ params }) => {
         fetchData()
     }, [])
     return (
-        <div className=" h-100% p-3 lg:p-5">
+        <div className=" h-100% p-3 lg:p-5  text-gray-200">
             <div className="lg:flex ">
                 <Image
                     className="rounded "
@@ -42,17 +42,17 @@ const page = ({ params }) => {
             </div>
             {/* //cards */}
             <div className="lg:flex space-y-5 lg:space-y-0 mt-10">
-                <div className="bg-[#FFF0EF] p-5 rounded-xl lg:w-[200px]">
+                <div className="bg-transparent border p-5 rounded-xl lg:w-[200px]">
                     <p className="font-bold">Total Questions</p>
                     <p className="text-2xl text-[#FF6A64]">
                         {categoryData?.quizs?.length}
                     </p>
                 </div>
-                <div className="bg-[#FFF0EF] p-5 rounded-xl lg:w-[200px] lg:mx-5">
+                <div className="bg-transparent border p-5 rounded-xl lg:w-[200px] lg:mx-5">
                     <p className="font-bold">Time Per Question</p>
                     <p className="text-2xl  text-[#FF6A64]">30 sec</p>
                 </div>
-                <div className="bg-[#FFF0EF] p-5 rounded-xl lg:w-[200px]">
+                <div className="bg-transparent border p-5 rounded-xl lg:w-[200px]">
                     <p className="font-bold">Marks Per Question</p>
                     <p className="text-2xl text-[#FF6A64]">5 Marks</p>
                 </div>
@@ -88,13 +88,13 @@ const page = ({ params }) => {
                     </Link>
                 </div>
                 {/* //scoring */}
-                <div className="bg-[#FFF0EF] rounded-lg lg:w-[25%]  lg:flex justify-center lg:py-3 ">
+                <div className="bg-transparent border rounded-lg lg:w-[25%]  lg:flex justify-center lg:py-3 ">
                     <div>
                         <p className="font-bold">Our Scoring System</p>
-                        <p className="bg-[#FFD8D6] p-2 rounded-xl mt-2">Below 80% - F</p>
-                        <p className="bg-[#FFD8D6] p-2 rounded-xl mt-2">Above 80% - B+</p>
-                        <p className="bg-[#FFD8D6] p-2 rounded-xl mt-2">Above 90% - A</p>
-                        <p className="bg-[#FFD8D6] p-2 rounded-xl mt-2">100% - A+</p>
+                        <p className="bg-transparent border p-2 rounded-xl mt-2">Below 80% - F</p>
+                        <p className="bg-transparent border p-2 rounded-xl mt-2">Above 80% - B+</p>
+                        <p className="bg-transparent border p-2 rounded-xl mt-2">Above 90% - A</p>
+                        <p className="bg-transparent border p-2 rounded-xl mt-2">100% - A+</p>
                     </div>
                 </div>
             </div>

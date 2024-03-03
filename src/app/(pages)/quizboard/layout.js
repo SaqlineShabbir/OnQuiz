@@ -15,10 +15,10 @@ import { useState } from "react";
 export default function QuizLayout({ children }) {
     const [open, setOpen] = useState(false);
     return (
-        <div className="bg-gradient-to-r from-blue-600 to-black min-h-[120vh]">
+        <div className="bg-gradient-to-r from-blue-600 min-h-[100vh] to-black">
             <TopBoard open={open} setOpen={setOpen}></TopBoard>
             <SideNavigation setOpen={setOpen} open={open}></SideNavigation>
-            <div className='md:ml-[270px]   border border-orange-500 min-h-screen rounded shadow-lg'>{children}</div>
+            <div className='md:ml-[270px] border border-orange-500  rounded shadow-lg min-h-[89vh]'>{children}</div>
         </div>
     );
 }
