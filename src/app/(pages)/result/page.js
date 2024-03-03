@@ -22,7 +22,7 @@ const page = () => {
         };
     }, []);
 
-    console.log(data)
+   
     return (
         <div className='bg-gradient-to-r from-blue-600 min-h-[100vh] to-black'>
             <Navigation></Navigation>
