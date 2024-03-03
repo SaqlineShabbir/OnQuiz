@@ -35,7 +35,7 @@ export default function Navigation() {
 
                             {/* device controll icon */}
                             <button
-                                className="p-2 rounded-md outline-none focus:border-gray-400 focus:border"
+                                className="p-2 rounded-md outline-none text-white focus:border-gray-400 focus:border"
                                 onClick={() => setNavbar(!navbar)}
                             >
                                 {navbar ? (
@@ -58,9 +58,9 @@ export default function Navigation() {
                     >
                         <ul className="items-center justify-center space-y-8 md:flex md:space-x-4 md:space-y-0">
 
-                            <div className='lg:flex space-x-4 text-gray-200'>
-                                <Link className='cursor-pointer ' href="/">Home</Link>
-                                <Link className='cursor-pointer ' href="/quizboard">Quizboard</Link>
+                            <div className='lg:flex lg:space-x-4 text-gray-200 space-y-4 lg:space-y-0'>
+                                <li><Link className='cursor-pointer ' href="/">Home</Link></li>
+                                <li><Link className='cursor-pointer ' href="/quizboard">Quizboard</Link></li>
                                 {!user && <li>
                                     <Link className='cursor-pointer ' href="/login">Login</Link>
                                 </li>}
